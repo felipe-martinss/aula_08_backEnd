@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "cpf":"123.456.819-10",
+        "nome":"Jhon Aura"
+    },
+    {
+        "id":2,
+        "cpf":"893.432.872-72",
+        "nome":"Anakin Skywalker"
+    },
+    {
+        "id":3,
+        "cpf":"323.526.132-72",
+        "nome":"Arthur Morgan"
+    }
+]
