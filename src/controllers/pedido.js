@@ -1,11 +1,4 @@
-const pedidos = require("../../dados/pedidos.json")
-
-//calcular subtotal
-function subtotais(){
-    pedidos.forEach(pedido=>{
-        pedido.subtotal = pedido.quantidade * pedido.preco
-    })
-}
+const pedidos = require("../../dados/pedido.json")
 
 const criar = (req, res) => {
     const dados = req.body
@@ -15,7 +8,7 @@ const criar = (req, res) => {
 }
 
 const listar = (req, res) => {
-    subtotais()
+    total()
     res.json(pedidos)
 }
 
@@ -24,12 +17,12 @@ const alterar = (req, res) => {
     const dados = req.body
     let status = 0
 
-    pedidos.forEach((pedido, indice) => {
-        if (pedido.id == id){
-            pedidos[indice] = dados
-            pedidos[indice].id = id
-            status = 1
-        }
+     const chaves = Object.keys(dados)
+    const pedido = pedidos.find((c) => c.id == id);
+
+    chaves.forEach((chave) =>{
+        pedido[chave] = dados[chave]
+        status = 1
     })
     if (status === 1){
         res.status(201).json("Pedido alterado com sucesso!")

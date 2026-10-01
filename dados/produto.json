@@ -1,0 +1,12 @@
+[
+    {
+        "id":1,
+        "nome":"Chia",
+        "preco":15
+    },
+    {
+        "id":2,
+        "nome":"Psyllium",
+        "preco":15  
+    }
+]

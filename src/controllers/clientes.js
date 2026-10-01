@@ -15,13 +15,14 @@ const alterar = (req, res) =>{
     const dados = req.body
     let status = 0
 
-    clientes.forEach((cliente, indice) => {
-        if (cliente.id == id){
-            clientes[indice] = dados
-            clientes[indice].id = id
-            status = 1
-        }
+    const chaves = Object.keys(dados)
+    const cliente = clientes.find((c) => c.id == id);
+
+    chaves.forEach((chave) =>{
+        cliente[chave] = dados[chave]
+        status = 1
     })
+   
     if (status === 1){
         res.status(201).json("Cliente alterado com sucesso!")
     } else{
