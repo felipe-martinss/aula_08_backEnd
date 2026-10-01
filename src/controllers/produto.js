@@ -1,5 +1,11 @@
 const produtos = require("../../dados/produto.json")
 
+function total(){
+    produtos.forEach(produto=>{
+        total = produto.preco
+    })
+}
+
 const criar = (req, res) => {
     const dados = req.body
     dados.id = Number(produtos[produtos.length - 1].id) +1 // AutoIncrement
@@ -7,7 +13,6 @@ const criar = (req, res) => {
     res.status(201).json(dados)
 }
 const listar = (req, res) => {
-    subtotais()
     res.json(produtos)
 }
 

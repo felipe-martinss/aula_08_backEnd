@@ -1,6 +1,6 @@
 const itens = require("../../dados/item.json")
 
-//calcular subtotal
+
 function subtotais(){
     itens.forEach(item=>{
         item.subtotal = item.quantidade * item.preco
@@ -55,5 +55,5 @@ const excluir = (req, res) => {
     }
 }
 module.exports = {
-    criar , listar, alterar, excluir
+    criar , listar, alterar, excluir, total
 }

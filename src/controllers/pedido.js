@@ -1,4 +1,23 @@
 const pedidos = require("../../dados/pedido.json")
+const item = require("./item.js")
+const listaItens = require("../../dados/item.json")
+const produto = require("../../dados/pedido.json")
+
+function total (req, res){
+
+    pedidos.forEach(p => {
+
+        let total = 0
+        const aux = listaItens.filter(i => i.pedido_id == p.id)
+
+        aux.forEach(a => {
+            total += a.quantidade* produtos.find(p => p.id == a.produto_id).preco
+        })
+        console.log(p.id, total)
+    })
+
+    res.send()
+}
 
 const criar = (req, res) => {
     const dados = req.body
@@ -8,7 +27,6 @@ const criar = (req, res) => {
 }
 
 const listar = (req, res) => {
-    total()
     res.json(pedidos)
 }
 

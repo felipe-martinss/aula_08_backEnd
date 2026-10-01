@@ -11,23 +11,23 @@ const rotaInicial = (req, res) => {
 }
 
 router.get("/", rotaInicial)
+
 router.get("/clientes", Cliente.listar)
+router.post("/clientes", Cliente.criar)
+router.put("/clientes/:id", Cliente.alterar )
+router.delete("/clientes/:id", Cliente.excluir)
 router.get("/pedidos", Pedido.listar )
 router.post("/pedidos", Pedido.criar)
-router.post("/clientes", Cliente.criar)
 router.put("/pedidos/:id", Pedido.alterar)
-router.put("/clientes/:id", Cliente.alterar )
 router.delete("/pedidos/:id", Pedido.excluir)
-router.delete("/clientes/:id", Cliente.excluir)
+router.get("/produtos", Produto.listar)
+router.post("/produtos", Produto.criar)
+router.put("/produtos/:id", Produto.alterar)
+router.delete("/produtos/:id", Produto.excluir)
+router.get("/itens", Item.listar)
+router.post("/itens", Item.criar)
+router.put("/itens/:id", Item.alterar)
+router.delete("/itens/:id", Item.excluir)
 
-router.get("/produto", Produto.listar)
-router.post("/produto", Produto.criar)
-router.put("/produto/:id", Produto.alterar)
-router.delete("/produto/:id", Produto.excluir)
-
-router.get("/item", Item.listar)
-router.post("/item", Item.criar)
-router.put("/item/:id", Item.alterar)
-router.delete("/item/:id", Item.excluir)
 
 module.exports = router
